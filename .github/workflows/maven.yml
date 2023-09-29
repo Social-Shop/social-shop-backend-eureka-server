@@ -16,7 +16,6 @@ on:
 
 jobs:
   build:
-
     runs-on: self-hosted
 
     steps:
@@ -37,4 +36,14 @@ jobs:
       run : chmod u+x ./script/*.sh
     - name: Docker compose
       run : ./script/*.sh
+
+  deploy:
+    runs-on: self-hosted
+    needs: build
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup Permission File
+      run : chmod u+x ./scripts/*.sh
+    - name: Docker compose
+      run : ./scripts/*.sh
         
