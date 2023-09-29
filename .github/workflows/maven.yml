@@ -32,10 +32,6 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn clean install
-    - name: Setup Permission File
-      run : chmod u+x ./script/*.sh
-    - name: Docker compose
-      run : ./script/*.sh
 
   deploy:
     runs-on: self-hosted
