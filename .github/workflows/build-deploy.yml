@@ -57,8 +57,8 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            REPO_URL="https://github.com/username/repo.git"
-            LOCAL_DIR="repo"
+            REPO_URL="https://github.com/hidenxtt/social-shop-backend-deploy.git"
+            LOCAL_DIR="repos"
             if [ ! -d "$LOCAL_DIR" ]; 
             then
               git clone "$REPO_URL" "$LOCAL_DIR"
