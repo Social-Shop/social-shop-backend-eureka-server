@@ -58,7 +58,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             TARGET_DIR= /projects/social-shop-backend-deploy
-            git -C $TARGET_DIR/social-shop-backend-deploy pull || git clone https://github.com/Social-Shop/social-shop-backend-deploy.git $TARGET_DIR
-            ./$TARGET_DIR/scripts/deploy.sh
+            git -C "$TARGET_DIR"/social-shop-backend-deploy pull || git clone https://github.com/Social-Shop/social-shop-backend-deploy.git "$TARGET_DIR"
+            ./"$TARGET_DIR"/scripts/deploy.sh
 
             
