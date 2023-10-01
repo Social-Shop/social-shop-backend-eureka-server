@@ -59,6 +59,7 @@ jobs:
           script: |
             REPOSRC=https://github.com/Social-Shop/social-shop-backend-deploy.git
             LOCALREPO=projects/social-shop-backend-deploy
+            mkdir -p $LOCALREPO
             # We do it this way so that we can abstract if from just git later on
             LOCALREPO_VC_DIR=$LOCALREPO/.git
             if [ ! -d $LOCALREPO_VC_DIR ]
