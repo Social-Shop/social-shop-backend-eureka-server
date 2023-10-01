@@ -69,5 +69,6 @@ jobs:
             # Docker compose
             cd "$LOCAL_DIR"
             git pull && echo "Git pull finish";
+            echo "$PWD"
             /scripts/deploy.sh
             
