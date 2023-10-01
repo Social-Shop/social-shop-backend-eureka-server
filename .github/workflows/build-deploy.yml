@@ -72,5 +72,5 @@ jobs:
             cd "$LOCAL_DIR"
             echo "Move to dir"
             git pull && echo "Git pull finish";
-            ./scripts/deploy.sh
+            /scripts/deploy.sh
             
