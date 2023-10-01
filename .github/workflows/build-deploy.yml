@@ -67,7 +67,7 @@ jobs:
               git clone $REPOSRC $LOCALREPO
             else
               cd $LOCALREPO
-              sudo git pull $REPOSRC
+              git pull $REPOSRC
             fi
 
             
