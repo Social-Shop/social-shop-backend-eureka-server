@@ -65,7 +65,6 @@ jobs:
             else
               echo "Repository already exists locally"
             fi
-
             # Docker compose
             cd "$LOCAL_DIR"
             git pull && echo "Git pull finish";
