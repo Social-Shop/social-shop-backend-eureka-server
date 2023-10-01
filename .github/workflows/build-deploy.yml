@@ -63,13 +63,14 @@ jobs:
             then
               git clone "$REPO_URL" "$LOCAL_DIR"
               echo "Repository cloned successfully."
-              cd "$LOCAL_DIR"
+              
             else
-              cd "$LOCAL_DIR"
-              git pull
               echo "Repository already exists locally. Pulled latest changes."
             fi
 
             # Docker compose
+            cd "$LOCAL_DIR"
+            echo "Move to dir"
+            git pull && echo "Git pull finish";
             ./scripts/deploy.sh
             
