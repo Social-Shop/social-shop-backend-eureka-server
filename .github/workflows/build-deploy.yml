@@ -57,17 +57,15 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            REPOSRC=https://github.com/Social-Shop/social-shop-backend-deploy.git
-            LOCALREPO=projects/social-shop-backend-deploy
-            mkdir -p $LOCALREPO
-            # We do it this way so that we can abstract if from just git later on
-            LOCALREPO_VC_DIR=$LOCALREPO/.git
-            if [ ! -d $LOCALREPO_VC_DIR ]
+            REPO_URL="https://github.com/username/repo.git"
+            LOCAL_DIR="repo"
+            if [ ! -d "$LOCAL_DIR" ]; 
             then
-              git clone $REPOSRC $LOCALREPO
+              git clone "$REPO_URL" "$LOCAL_DIR"
+              echo "Repository cloned successfully."
             else
-              cd $LOCALREPO
-              git pull $REPOSRC
+              cd "$LOCAL_DIR"
+              git pull
+              echo "Repository already exists locally. Pulled latest changes."
             fi
-
             
