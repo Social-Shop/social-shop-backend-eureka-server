@@ -61,16 +61,13 @@ jobs:
             LOCAL_DIR="repos/social-shop-backend-deploy"
             if [ ! -d "$LOCAL_DIR" ]; 
             then
-              git clone "$REPO_URL" "$LOCAL_DIR"
-              echo "Repository cloned successfully."
-              
+              git clone "$REPO_URL" "$LOCAL_DIR" && echo "Repository cloned successfully.";
             else
-              echo "Repository already exists locally. Pulled latest changes."
+              echo "Repository already exists locally"
             fi
 
             # Docker compose
             cd "$LOCAL_DIR"
-            echo "Move to dir"
             git pull && echo "Git pull finish";
             /scripts/deploy.sh
             
