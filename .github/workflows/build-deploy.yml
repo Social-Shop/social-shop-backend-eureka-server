@@ -56,4 +56,9 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            TARGET_DIR= ~./projects
+            git -C "$TARGET_DIR" pull || git clone https://github.com/Social-Shop/social-shop-backend-deploy.git "$TARGET_DIR"
+            "$TARGET_DIR"/social-shop-backend-deploy/scripts/deploy.sh
+
             
