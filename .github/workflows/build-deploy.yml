@@ -58,11 +58,12 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             REPO_URL="https://github.com/Social-Shop/social-shop-backend-deploy.git"
-            LOCAL_DIR="repos"
+            LOCAL_DIR="repos/social-shop-backend-deploy"
             if [ ! -d "$LOCAL_DIR" ]; 
             then
               git clone "$REPO_URL" "$LOCAL_DIR"
               echo "Repository cloned successfully."
+              cd "$LOCAL_DIR"
             else
               cd "$LOCAL_DIR"
               git pull
